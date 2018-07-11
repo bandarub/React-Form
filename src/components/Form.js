@@ -1,6 +1,7 @@
 import React from 'react';
 import {
     BrowserRouter as Router,
+    HashRouter,
     Route,
     NavLink,
     Switch
@@ -24,7 +25,7 @@ const Home = (props) => (
  
   const Form =(props)=>{
     return(<div>      
-        <Router>
+        <HashRouter>
             <div>
                 <ul className="header-links">
                     <li className="link"><NavLink exact activeStyle ={{color:'#008CBA'}} to="/">Home</NavLink></li>
@@ -36,7 +37,7 @@ const Home = (props) => (
                 </ul>
                 <form onSubmit={props.submit}>
                     <Switch>
-                        <Route exact  path ="/" component ={Home}/>                       
+                        <Route exact  path ="/" component={Home}/>
                         <Route exact  path ="/PersonalInformation" render={()=>(<PersonalInformation change={props.change} information={props.information} validate={props.validate} toggle={props.toggle} focusData={props.focusData}/>)}/>
                         <Route exact  path ="/Skills&Location" render={()=>(<SkillsLocation change={props.change} information={props.information} radio={props.radio} validate={props.validate} toggle={props.toggle} focusData={props.focusData}/>)} />
                         <Route exact path ="/Portfolio" render={()=>(<Portfolio change={props.change} information={props.information} validate={props.validate}  toggle={props.toggle} focusData={props.focusData}/>)} />  
@@ -45,7 +46,7 @@ const Home = (props) => (
                     </form>
                     
             </div>
-        </Router>
+        </HashRouter>
         
     </div>)
   }
