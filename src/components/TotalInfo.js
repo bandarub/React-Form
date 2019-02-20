@@ -22,7 +22,7 @@ return(<div className="totalInfo">
     <div className="navigation-container">
     <NavLink to="/Portfolio" className="bottom-navigation">back</NavLink>
     </div>  
-    <button className="submit-button" type="submit" onClick={props.submit} disabled={props.deactive}>Submit</button>
+    <NavLink to="/"><button className="submit-button" type="submit" onClick={props.submit} disabled={props.deactive}>Submit</button></NavLink>
     </div>
     )
 }

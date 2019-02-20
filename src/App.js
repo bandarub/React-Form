@@ -49,10 +49,10 @@ class App extends Component {
       : [...this.state[e.target.name]].filter(item=>item!==e.target.value)})
   }
   handleSubmit=(e)=>{
-   e.preventDefault();
+   e.preventDefault();  
    let info=[];
-   info.push({...this.state});   
-   
+   info.push({...this.state});  
+    
   }  
   handleFocus=(e)=>{  
   const field=e.target.name;  
@@ -67,16 +67,16 @@ validate = (fullName,phoneNumber,email,emailAgain,
 const errors = {
   fullName:/[a-zA-Z]+[\s|.][a-zA-Z]+$/.test(fullName)
             ?''
-            :'Please enter full Name',
+            :'Please enter full Name(FirstName LastName)',
   phoneNumber:/^(0{2}|\+)[0-9]{3}[0-9]{9}/.test(phoneNumber)
               ?''
               :'Enter phone number in international format',
-  email:/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.test(email)
+  email:/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(email)
         ?''
-        :'enter valid email.adderess',
+        :'Enter valid email.adderess',
   emailAgain:email===emailAgain
             ?''
-            :'email address should match',
+            :'Email address should match',
   address:/[\w|[a-zA-Z.:]+[\s|\W|\d]+[\w+|\s\d]+/.test(address)
           ?''
           :'Enter valid adderess',
@@ -110,10 +110,9 @@ return errors;
 }
 
 isSubmitDisabled = errors => {
-  return Object.values(errors).some(errMsg => {
+ return Object.values(errors).some(errMsg => {
     return errMsg;
-  });
- 
+  }); 
 };
 
   render() {
