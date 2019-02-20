@@ -3,4 +3,4 @@
 Live Demo [here](https://bandarub.github.io/React-Form/)
 
 ## Authors
-* * Sravanthi * *
+* *Sravanthi* *
